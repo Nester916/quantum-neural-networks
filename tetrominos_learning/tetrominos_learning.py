@@ -21,7 +21,7 @@ import time
 import os
 
 import sys
-sys.path.append("..")
+sys.path.append(os.path.abspath("/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks"))
 import version_check
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
