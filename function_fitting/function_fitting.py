@@ -26,8 +26,8 @@ import strawberryfields as sf
 from strawberryfields.ops import *
 
 import sys
-sys.path.append("..")
-import version_check
+sys.path.append("/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks")
+#import version_check
 
 # ===================================================================================
 #                                   Hyperparameters
@@ -99,9 +99,9 @@ def f6(x, eps=0.0):
 # ===================================================================================
 # load the training data from the provided files
 
-train_data = np.load('sine_train_data.npy')
-test_data = np.load('sine_test_data.npy')
-data_y = np.load('sine_outputs.npy')
+train_data = np.load('/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks/function_fitting/sine_train_data.npy')
+test_data = np.load('/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks/function_fitting/sine_test_data.npy')
+data_y = np.load('/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks/function_fitting/sine_outputs.npy')
 
 
 # ===================================================================================
@@ -112,17 +112,17 @@ data_y = np.load('sine_outputs.npy')
 sdev = 0.05
 
 with tf.name_scope('variables'):
-    d_r = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    d_phi = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    r1 = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    sq_r = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    sq_phi = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    r2 = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
-    kappa1 = tf.Variable(tf.random_normal(shape=[depth], stddev=sdev))
+    d_r = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    d_phi = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    r1 = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    sq_r = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    sq_phi = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    r2 = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
+    kappa1 = tf.Variable(tf.random.normal(shape=[depth], stddev=sdev))
 
 
 # construct the one-mode Strawberry Fields engine
-eng, q = sf.Engine(1)
+eng = sf.LocalEngine(backend='fock')
 
 
 def layer(i):

@@ -17,7 +17,7 @@ import numpy as np
 import random
 
 # creditcard.csv downloaded from https://www.kaggle.com/mlg-ulb/creditcardfraud
-with open('creditcard.csv', 'r') as csv_file:
+with open('/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks/fraud_detection/creditcard.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
 
     data = list(csv_reader)

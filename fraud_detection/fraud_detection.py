@@ -21,7 +21,7 @@ import strawberryfields as sf
 from strawberryfields.ops import Dgate, BSgate, Kgate, Sgate, Rgate
 
 import sys
-sys.path.append("..")
+sys.path.append("/media/naimur-neer/Local Disk/Proj_Rep/strawberry/quantum-neural-networks")
 import version_check
 
 # ===================================================================================
